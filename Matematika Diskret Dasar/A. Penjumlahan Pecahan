@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    long long a,b,c,d;
+    cin >> a >> b >> c >> d;
+        
+    long long kpk = lcm(b, d);
+
+    long long pengkali_a = kpk / b;
+    long long pengkali_c = kpk / d;
+
+    long long pembilang1 = pengkali_a * a;
+    long long pembilang2 = pengkali_c * c;
+
+    long long pengecil = gcd( (pembilang1 + pembilang2), kpk);
+
+    long long pembilang = ( pembilang1 + pembilang2 ) / pengecil;
+    long long penyebut = kpk / pengecil;
+
+    cout << pembilang << ' ' << penyebut;
+}
